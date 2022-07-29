@@ -1,0 +1,185 @@
+
+ <!-- Slider main container -->
+ <div class="slider slider-1">
+   <!-- Your content -->
+   <div class="photos">
+       <img src="img/skate.jpg" class="shown">
+       <img src="img/shark.jpg">
+       <img src="img/fish1.jpg">
+       <img src="img/fish2.jpg">
+       <!-- Prev/next buttons -->
+       <div class="buttons">
+           <div class="prev"></div>
+           <div class="next"></div>
+       </div>
+   </div>
+ </div>
+ 
+ <div class="slider slider-2">
+   <div class="photos">
+       <img src="img/skate.jpg" class="shown">
+       <img src="img/shark.jpg">
+       <img src="img/fish1.jpg">
+       <img src="img/fish2.jpg">
+       <div class="buttons">
+           <div class="prev"></div>
+           <div class="next"></div>
+       </div>
+   </div>
+ </div>
+2. Ajoutez des règles CSS pour aligner les galeries et les photos.
+
+          
+.slider {
+width: 700px;
+margin: 0 auto 20px;
+text-align: center;
+}
+
+.slider .photos {
+position: relative;
+height: 433px;
+}
+  
+Ensuite, définissez la valeur d’opacité sur 0 pour masquer les photos et ajoutez une transition pour créer un effet plus fluide.
+
+          
+.slider .photos img {
+width: 100%;
+position: absolute;
+left: 0;
+opacity: 0;
+transition: opacity 1s;
+}
+  
+Ajoutez la classe .shown avec la valeur d’opacité définie sur 1 pour afficher les photos si nécessaire.
+
+          
+.slider .photos img.shown {
+opacity: 1;
+}
+  
+Enfin, ajoutez quelques règles CSS pour styliser vos boutons « Précédent » et « Suivant ».
+
+          
+.prev:before,
+.next:before {
+color: #fff;
+font-size: 100px;
+position: absolute;
+top: 35%;
+cursor: pointer;
+}
+
+.prev:before {
+content: '<';
+left: 0;
+}
+
+.next:before {
+content: '>';
+right: 0;
+}
+  
+3. Pour éviter de répéter le code, il est recommandé de créer un objet JavaScript pour chaque curseur : créez un objet individuel avec le mot-clé new et une définition d’objet avec toutes les valeurs modifiables dont vous avez besoin. Par exemple, votre premier curseur peut être contrôlé manuellement, et votre deuxième curseur affichera automatiquement les images à une vitesse de 2000ms.
+
+          
+$(function() {
+  new Slider({
+      images: '.slider-1 img',
+      btnPrev: '.slider-1 .buttons .prev',
+      btnNext: '.slider-1 .buttons .next',
+      auto: false
+  });
+
+new Slider({
+      images: '.slider-2 img',
+      btnPrev: '.slider-2 .buttons .prev',
+      btnNext: '.slider-2 .buttons .next',
+      auto: true,
+      rate: 2000
+  });
+});
+  
+Après cela, créez une fonction qui gérera vos curseurs à l’aide des paramètres de vos objets JavaScript. Cette fonction contient les paramètres communs de tous vos carrousels. Ces paramètres ne sont pas censés être modifiés contrairement à ceux des définitions d’objets.
+
+          
+function Slider(obj) {
+this.images = $(obj.images);
+this.auto = obj.auto;
+this.btnPrev = obj.btnPrev;
+this.btnNext = obj.btnNext;
+   this.rate = obj.rate || 1000;
+
+var i = 0;
+   var slider = this;
+
+  // The "Previous" button: to remove the class .shown, to show the previous image and to add the .shown class
+this.prev = function () {
+  slider.images.eq(i).removeClass('shown');
+  i--;
+
+  if (i < 0) {
+    i = slider.images.length - 1;
+  }
+
+  slider.images.eq(i).addClass('shown');
+}
+
+  // The "Next" button: to remove the class .shown, to show the next image and to add the .shown class
+this.next = function () {
+  slider.images.eq(i).removeClass('shown');
+  i++;
+
+  if (i >= slider.images.length) {
+    i = 0;
+  }
+
+  slider.images.eq(i).addClass('shown');
+}
+
+  // To add next and prev functions when clicking on the corresponding buttons
+  $(slider.btnPrev).on('click', function(){ slider.prev();});
+  $(slider.btnNext).on('click', function(){ slider.next();});
+
+  // For the automatic slider: this method calls the next function at the set rate
+if (slider.auto)	{
+      setInterval(slider.next, slider.rate);
+  }
+};
+/*.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+   margin: 5px;
+padding: 10px;
+display: flex;
+border-radius: 20px;
+text-align: center;
+border: 2px solid skyblue;
+width: 165px;
+height: 50px;
+box-s
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display : -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}*/
+  

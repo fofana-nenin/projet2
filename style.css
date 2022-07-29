@@ -1,0 +1,207 @@
+
+.icons{
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    margin-left: -100px;
+}
+.icone{
+margin-top: -30px;
+margin-left: 500px;
+}
+.icone i{
+    margin-left: 10px;
+}
+
+.recherche{
+    border-radius: 70px;
+    width: 600px;
+    height: 50px;
+    border: 0.5px solid rgb(212, 212, 212);
+    box-shadow: 2px 2px 5px rgb(231, 231, 231) ;
+}
+.nav-links {
+    list-style-type: none;
+    text-decoration: none;
+    display: inline-flex;
+    margin-left: 60%;
+}
+
+.nav-links a{
+    list-style-type: none;
+    text-decoration: none;
+}
+.nav-links li{
+    margin: 5px 20px;
+    bottom: 10px;
+    
+}
+
+.filtre{
+    list-style-type: none;
+    text-decoration: none;
+    display: inline-flex;
+    margin-left: 16%;
+}
+.filtre a{
+    list-style-type: none;
+    text-decoration: none;
+}
+.filtre li{
+    
+    margin-right: 20px;
+    width: 80px;  
+}
+.menu{
+    display:inline-flex;
+    margin-left: -300px;
+}
+.filtre .automatique{
+    width: 135px;
+}
+.filtre .adulte{
+    width: 105px;
+}
+.connect{
+    text-align: center;
+    width: 25%;
+    float: right;
+    margin-top: 30px;
+    margin-left: 70px;
+}
+
+.trait1{
+    width: 30px;
+    padding-top: 15px;
+}
+ .trait1:hover{
+    width: 30px;
+    padding-top: 15px;
+    border-bottom: 3px solid rgb(201, 198, 198);
+}
+.trait2{
+    width: 40px;
+    border-bottom: 2px solid rgb(41, 164, 176);
+    margin-top: 10px;
+}
+.trait3{
+    width: 30px;
+    padding-top: 15px;
+}
+ .trait3:hover{
+    width: 30px;
+    padding-top: 15px;
+    border-bottom: 3px solid rgb(201, 198, 198);
+}
+.trait4{
+    width: 30px;
+    padding-top: 15px;
+}
+ .trait4:hover{
+    width: 30px;
+    padding-top: 15px;
+    border-bottom: 3px solid rgb(201, 198, 198);
+}
+.trait5{
+    width: 50px;
+    padding-top: 15px;
+}
+ .trait5:hover{
+    width: 50px;
+    padding-top: 15px;
+    border-bottom: 3px solid rgb(201, 198, 198);
+}
+.trait{
+    margin-top:-13px ;
+}
+.menu1{
+    margin-left: 25px;
+}
+.i{
+    width: 170px;
+    height: 60px;
+    border: 2px solid rgb(41, 164, 176);
+    border-radius: 50px;
+    margin-bottom: 10px;
+    display: inline-flex;
+    font-style: normal;
+    
+
+}
+.ig{
+    border-radius: 100%;
+    margin: 5px;
+}
+.f{
+    font-size: 12px;
+    height: 100px;
+    width: 50px;
+    margin: 5px;
+}
+.col-sm :hover{
+    text-decoration: underline;
+}
+.caption{
+    font-style: normal;
+    font-size: 12px;
+}
+.caption:hover{
+    text-decoration: underline;
+}
+.row{
+    margin: 20px;
+}
+.container-fluid a:link {
+    text-decoration: none;
+}
+#emma {
+    display: none;
+  }
+  .card a{
+    color: white;
+    font-size: 13px;
+    text-align: center;
+  }
+    
+  #nenin:hover + #emma {
+    display: block;
+    margin-top: -50px;
+    background-color: rgb(110, 100, 100);
+    opacity: 0.6;
+    text-decoration: underline;
+  }
+  .swiper {
+    width: 100%;
+    height:  20%;
+
+  }
+  .caption p{
+    text-align: center;
+  }
+  .container-fluid img{
+    background-image: cover;
+  }
+.icons{
+min-width: 1200px;
+} 
+.menu1{
+    min-width: 1200px;
+}
+.container-fluid{
+    min-width: 1200px;
+  }
+
+
+
+
+
+
+
+
+
+
+
